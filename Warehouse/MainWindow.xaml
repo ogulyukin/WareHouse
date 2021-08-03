@@ -1,0 +1,78 @@
+﻿<Window x:Class="Warehouse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse"
+        mc:Ignorable="d"
+        Title="Склад" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Товары" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="7" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="GoodsShow" Content="Показать" Grid.Row="3" Grid.Column="3" Click="GoodsShow_Click"/>
+        <Button x:Name="GoodsAdd" Content="Добавить" Grid.Row="3" Grid.Column="5" Click="GoodsShow_Click"/>
+        <Button x:Name="GoodsRemove" Content="Удалить" Grid.Row="3" Grid.Column="7" Click="GoodsShow_Click"/>
+        <Button x:Name="GoodsEdit" Content="Изменить" Grid.Row="3" Grid.Column="9" Click="GoodsShow_Click"/>
+        <TextBlock Text="Поставщики" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="7" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="ProviderShow" Content="Показать" Grid.Row="7" Grid.Column="3" Click="ProviderShow_Click"/>
+        <Button x:Name="ProviderAdd" Content="Добавить" Grid.Row="7" Grid.Column="5" Click="ProviderShow_Click"/>
+        <Button x:Name="ProviderRemove" Content="Удалить" Grid.Row="7" Grid.Column="7" Click="ProviderShow_Click"/>
+        <Button x:Name="ProviderEdit" Content="Изменить" Grid.Row="7" Grid.Column="9" Click="ProviderShow_Click"/>
+        <TextBlock Text="Виды товаров" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="7" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="TypesShow" Content="Показать" Grid.Row="11" Grid.Column="3" Click="TypesShow_Click"/>
+        <Button x:Name="TypesAdd" Content="Добавить" Grid.Row="11" Grid.Column="5" Click="TypesShow_Click"/>
+        <Button x:Name="TypesRemove" Content="Удалить" Grid.Row="11" Grid.Column="7" Click="TypesShow_Click"/>
+        <Button x:Name="TypesEdit" Content="Изменить" Grid.Row="11" Grid.Column="9" Click="TypesShow_Click"/>
+        <TextBlock Text="Отчеты" Grid.Row="13" Grid.Column="3" Grid.ColumnSpan="7" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="ProviderMaxShow" Grid.Row="15" Grid.Column="3" Click="ShowProvReport_Click">
+            <TextBlock Text="Поставщик с макс. количеством товара" FontSize="10" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="ProviderMinShow" Grid.Row="15" Grid.Column="5" Click="ShowProvReport_Click">
+            <TextBlock Text="Поставщик с мин. количеством товара" FontSize="10" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="TypesMaxShow" Grid.Row="15" Grid.Column="7" Click="ShowTypesReport_Click">
+            <TextBlock Text="Тип с макс. количеством товара" FontSize="10" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="TypesMinShow" Grid.Row="15" Grid.Column="9" Click="ShowTypesReport_Click">
+            <TextBlock Text="Тип с мин. количеством товара" FontSize="10" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <ListBox x:Name="InformationView" Grid.Row="1" Grid.Column="1" Grid.RowSpan="15">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ListBoxItem Content="{Binding Path=Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
